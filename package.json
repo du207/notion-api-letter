@@ -16,6 +16,6 @@
     },
     "scripts": {
         "dev": "ts-node .",
-        "prod": "tsc && node ./build"
+        "prod": "tsc && node --experimental-specifier-resolution=node ./build"
     }
 }
