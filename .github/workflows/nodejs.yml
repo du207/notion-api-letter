@@ -31,3 +31,4 @@ jobs:
                   QUOTE_BLOCK_ID: ${{ secrets.QUOTE_BLOCK_ID }}
                   CONFIG_DATABASE_ID: ${{ secrets.CONFIG_DATABASE_ID }}
                   OPENWEATHERMAP_API_KEY: ${{ secrets.OPENWEATHERMAP_API_KEY }}
+                  TZ_OFFSET: "-540"
