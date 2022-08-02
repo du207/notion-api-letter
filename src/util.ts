@@ -1,5 +1,9 @@
 export function getDate() {
-    const dateObj = new Date();
+    const curr = new Date();
+    const utcUnix = curr.getTime() + curr.getTimezoneOffset() * 60 * 1000;
+    const offset = Number(process.env.TZ_OFFSET) * 60 * 1000;
+    const dateObj = new Date(utcUnix - offset);
+
     const year = dateObj.getFullYear();
 
     const monthNoZero = dateObj.getMonth() + 1;
