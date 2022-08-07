@@ -39,10 +39,12 @@ const getRSS = async (url: string): Promise<RichTextType[]> => {
         .fill("")
         .map((_, i) => ({
             text: {
-                content: `${titles[i]}\n`,
-                link: {
-                    url: links[i],
-                },
+                content: `${titles[i] ?? "Fetch error"}\n`,
+                link: links[i]
+                    ? {
+                          url: links[i],
+                      }
+                    : undefined,
             },
         }));
 
