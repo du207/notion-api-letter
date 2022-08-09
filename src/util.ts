@@ -1,34 +1,7 @@
-export function getDate() {
-    const curr = new Date();
-    const utcUnix = curr.getTime() + curr.getTimezoneOffset() * 60 * 1000;
-    const offset = Number(process.env.TZ_OFFSET) * 60 * 1000;
-    const dateObj = new Date(utcUnix - offset);
+import { DateTime } from "luxon";
 
-    const year = dateObj.getFullYear();
-
-    const monthNoZero = dateObj.getMonth() + 1;
-    const month = monthNoZero < 10 ? "0" + monthNoZero : monthNoZero;
-
-    const dateNoZero = dateObj.getDate();
-    const date = dateNoZero < 10 ? "0" + dateNoZero : dateNoZero;
-
-    const dayArray = ["일", "월", "화", "수", "목", "금", "토"];
-    const day = dayArray[dateObj.getDay()];
-
-    return `${year}-${month}-${date} (${day})`;
-}
-
-export function getTime(unix: number) {
-    const date = new Date(unix * 1000);
-
-    const hourNoZero = date.getHours();
-    const hour = hourNoZero < 10 ? "0" + hourNoZero : hourNoZero;
-
-    const minuteNoZero = date.getMinutes();
-    const minute = minuteNoZero < 10 ? "0" + minuteNoZero : minuteNoZero;
-
-    return `${hour}:${minute}`;
-}
+export const getTime = (unix: number) =>
+    DateTime.fromSeconds(unix).setZone(process.env.TZ).toFormat("HH:mm");
 
 export function getMoonIcon(phase: number) {
     if (phase < 2 / 9) return "🌒";

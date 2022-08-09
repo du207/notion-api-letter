@@ -1,11 +1,11 @@
 import "dotenv/config";
 
 import { Client } from "@notionhq/client";
-import { getDate } from "./util";
 import getConfig, { ConfigType } from "./config";
 import getWeather from "./weather";
 import getFeeds from "./feeds";
 import updateXkcd from "./xkcd";
+import { DateTime } from "luxon";
 
 const notion = new Client({
     auth: process.env.NOTION_TOKEN,
@@ -18,10 +18,15 @@ const makeQuote = async (config: ConfigType) => {
     const { weather, sun, moon } = await getWeather(lat, lon);
     const rssObjs = await getFeeds(JSON.parse(config["rss"]));
 
+    const date = DateTime.now()
+        .setZone(process.env.TZ)
+        .setLocale("ko")
+        .toFormat("yyyy-LL-dd (ccc)");
+
     return [
         {
             text: {
-                content: `📅 ${getDate()}\n${weather}\n${sun}\n${moon}\n`,
+                content: `📅 ${date}\n${weather}\n${sun}\n${moon}\n`,
             },
         },
         ...rssObjs,

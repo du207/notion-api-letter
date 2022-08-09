@@ -6,8 +6,10 @@
     "type": "module",
     "dependencies": {
         "@notionhq/client": "^2.1.1",
+        "@types/luxon": "^3.0.0",
         "cheerio": "^1.0.0-rc.12",
         "dotenv": "^16.0.1",
+        "luxon": "^3.0.1",
         "node-fetch": "^3.2.10"
     },
     "devDependencies": {
