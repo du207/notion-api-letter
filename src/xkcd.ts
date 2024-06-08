@@ -1,6 +1,7 @@
 import { Client, isFullBlock } from "@notionhq/client";
 import fetch from "node-fetch";
 
+/** Get xkcd image url and update the child block in the quote */
 export default async function updateXkcd(notion: Client) {
     const res = await fetch("https://xkcd.com/info.0.json");
     const data = (await res.json()) as { img: string };

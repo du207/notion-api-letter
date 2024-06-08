@@ -26,7 +26,15 @@ const makeQuote = async (config: ConfigType) => {
     return [
         {
             text: {
-                content: `📅 ${date}\n${weather}\n${sun}\n${moon}\n`,
+                content: `📅 ${date}\n`,
+            },
+            annotations: {
+                bold: true,
+            },
+        },
+        {
+            text: {
+                content: `${weather}\n${sun}\n${moon}\n`,
             },
         },
         ...rssObjs,
@@ -53,6 +61,7 @@ const updateQuote = async () => {
             },
         });
 
+        // Unfortunately, we should update the image individually
         await updateXkcd(notion);
 
         console.log("Updated!");

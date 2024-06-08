@@ -10,6 +10,7 @@ type RichTextPropertyRequest = {
     results: Array<{ rich_text: { plain_text: string } }>;
 };
 
+/** Get Config from notion database */
 export default async function getConfig(notion: Client): Promise<ConfigType> {
     const res = await notion.databases.query({
         database_id: process.env.CONFIG_DATABASE_ID!,

@@ -7,19 +7,20 @@ export type Weather = {
     icon: string;
 };
 
-export type Daily = {
+export type Time = {
+    dt: number;
     weather: Weather[];
-    temp: {
-        min: number;
-        max: number;
+    main: {
+        temp: number;
+        temp_min: number;
+        temp_max: number;
     };
-    sunrise: number;
-    sunset: number;
-    moonrise: number;
-    moonset: number;
-    moon_phase: number;
 };
 
-export type OneCallAPIType = {
-    daily: Daily[];
+export type DailyAPIType = {
+    list: Time[];
+    city: {
+        sunrise: number;
+        sunset: number;
+    };
 };

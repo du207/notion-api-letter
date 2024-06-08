@@ -73,6 +73,11 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.6.3.tgz#4e4a95b6fe44014563ceb514b2598b3e623d1c98"
   integrity sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==
 
+"@types/suncalc@^1.9.2":
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/@types/suncalc/-/suncalc-1.9.2.tgz#207810e705572c29c3f5519c29004d88a0c3b2b3"
+  integrity sha512-ATAGBHHfA1TlE2tjfidLyTcysjoT2JHHEAmWRULh73SU9UTn++j5fqHEW16X6Y/2Li87jEQXzgu4R/OOdlDqzw==
+
 acorn-walk@^8.1.1:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/acorn-walk/-/acorn-walk-8.2.0.tgz#741210f2e2426454508853a2f44d0ab83b7f69c1"
@@ -304,6 +309,11 @@ parse5@^7.0.0:
   integrity sha512-y/t8IXSPWTuRZqXc0ajH/UwDj4mnqLEbSttNbThcFhGrZuOyoyvNBO85PBp2jQa55wY9d07PBNjsK8ZP3K5U6g==
   dependencies:
     entities "^4.3.0"
+
+suncalc@^1.9.0:
+  version "1.9.0"
+  resolved "https://registry.yarnpkg.com/suncalc/-/suncalc-1.9.0.tgz#26212353fae61edb287c2d558fc4932ecf0e1532"
+  integrity sha512-vMJ8Byp1uIPoj+wb9c1AdK4jpkSKVAywgHX0lqY7zt6+EWRRC3Z+0Ucfjy/0yxTVO1hwwchZe4uoFNqrIC24+A==
 
 tr46@~0.0.3:
   version "0.0.3"
