@@ -1,9 +1,9 @@
 import fetch from "node-fetch";
 import Suncalc from "suncalc";
 
-import weather_data from "./weather_data";
-import { DailyAPIType } from "./weatherType";
-import { dateToTime, getMoonIcon, unixToTime } from "../util";
+import weather_data from "./weather_data.js";
+import { DailyAPIType } from "./weatherType.js";
+import { dateToTime, getMoonIcon, unixToTime } from "../util.js";
 
 export default async function (lat: number, lon: number) {
     const res = await fetch(

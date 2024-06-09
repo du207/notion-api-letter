@@ -1,4 +1,4 @@
-import weather_data from "./weather_data";
+import weather_data from "./weather_data.js";
 
 export type Weather = {
     id: keyof typeof weather_data;

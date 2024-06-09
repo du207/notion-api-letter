@@ -1,10 +1,10 @@
 import "dotenv/config";
 
 import { Client } from "@notionhq/client";
-import getConfig, { ConfigType } from "./config";
-import getWeather from "./weather";
-import getFeeds from "./feeds";
-import updateXkcd from "./xkcd";
+import getConfig, { ConfigType } from "./config.js";
+import getWeather from "./weather/index.js";
+import getFeeds from "./feeds.js";
+import updateXkcd from "./xkcd.js";
 import { DateTime } from "luxon";
 
 const notion = new Client({
